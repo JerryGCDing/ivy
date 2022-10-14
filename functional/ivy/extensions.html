@@ -73,6 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="extensions/max_pool2d.html">max_pool2d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extensions/kaiser_window.html">kaiser_window</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extensions/moveaxis.html">moveaxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions/ndenumerate.html">ndenumerate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extensions/pad.html">pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extensions/heaviside.html">heaviside</a></li>
 </ul>
@@ -100,14 +101,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/converters.html">Converters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/norms.html">Norms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stateful/layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stateful/norms.html">Norms</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -446,7 +447,7 @@ If False, returns a symmetric window suitable for use in filter design.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – Input image <em>[batch_size,h,w,d_in]</em>.</p></li>
-<li><p><strong>kernel</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/array/array/Array.html#ivy.array.array.Array" title="ivy.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>    ) – Size of the kernel i.e., the sliding window for each
+<li><p><strong>kernel</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – Size of the kernel i.e., the sliding window for each
 dimension of input. <em>[h,w]</em>.</p></li>
 <li><p><strong>strides</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – SAME” or “VALID” indicating the algorithm, or list
@@ -529,6 +530,33 @@ These must also be unique.</p></li>
 <dt class="sig sig-object py" id="ivy.functional.ivy.extensions.native_sparse_array_to_indices_values_and_shape">
 <span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">native_sparse_array_to_indices_values_and_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/extensions.html#native_sparse_array_to_indices_values_and_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.extensions.native_sparse_array_to_indices_values_and_shape" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy.functional.ivy.extensions.ndenumerate">
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">ndenumerate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/extensions.html#ndenumerate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.extensions.ndenumerate" title="Permalink to this definition"></a></dt>
+<dd><p>Multidimensional index iterator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>) – Input array to iterate over.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Generator</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>ret</em> – An iterator yielding pairs of array coordinates and values.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">(0, 0) 1</span>
+<span class="go">(0, 1) 2</span>
+<span class="go">(1, 0) 3</span>
+<span class="go">(1, 1) 4</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.extensions.pad">
@@ -810,7 +838,7 @@ of size window_length.</p>
 <div class="toctree-wrapper compound">
 </div>
 <p>def is_ivy_sparse_array.rst</p>
-<p>This should have hopefully given you an overview of the Extensions submodule,If you’re ever unsure of how best to proceed, please feel free to engage with the <a class="reference external" href="https://github.com/unifyai/ivy/discussions/1028298957870354542">Extensions discussion</a>,or reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028272402624434196">Extensions channel</a>!</p>
+<p>This should have hopefully given you an overview of the extensions submodule,If you have any questions, please feel free to reach out on our <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028272402624434196">extensions channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028298957870354542">extensions forum</a>!</p>
 </section>
 
 
