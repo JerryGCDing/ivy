@@ -82,15 +82,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/helpers.html">Helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Nested array</span></p>
 <ul>
@@ -1258,8 +1258,8 @@
 <span class="sd">        &gt;&gt;&gt; y = x1.all_equal(x2, equality_matrix= False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: true,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: True,</span>
+<span class="sd">            b: False</span>
 <span class="sd">        }</span>
 
 <span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.array([1, 0, 1, 1]), b=ivy.array([1, -1, 0, 0]))</span>
@@ -1267,8 +1267,8 @@
 <span class="sd">        &gt;&gt;&gt; y = x1.all_equal(x2, equality_matrix= False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: true,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: True,</span>
+<span class="sd">            b: False</span>
 <span class="sd">        }</span>
 
 <span class="sd">        With multiple :class:`ivy.Container` instances:</span>
@@ -1280,8 +1280,8 @@
 <span class="sd">        &gt;&gt;&gt; y = x1.all_equal(x2, equality_matrix= False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: true</span>
+<span class="sd">            a: False,</span>
+<span class="sd">            b: True</span>
 <span class="sd">        }</span>
 
 <span class="sd">        &gt;&gt;&gt; x1 = ivy.Container(a=ivy.native_array([1, 0, 0]),</span>
@@ -1291,8 +1291,8 @@
 <span class="sd">        &gt;&gt;&gt; y = x1.all_equal(x2, equality_matrix= False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: true</span>
+<span class="sd">            a: False,</span>
+<span class="sd">            b: True</span>
 <span class="sd">        }</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1688,7 +1688,6 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-
 <span class="sd">        &gt;&gt;&gt; x = ivy.container(a=ivy.array([1, 2]), b=ivy.array([float(&#39;nan&#39;), 2]))</span>
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_has_nans(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
@@ -2542,8 +2541,8 @@
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_value_is_nan(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: true</span>
+<span class="sd">            a: False,</span>
+<span class="sd">            b: True</span>
 <span class="sd">        }</span>
 
 <span class="sd">        With :class:`ivy.Container` input:</span>
@@ -2552,8 +2551,8 @@
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_value_is_nan(x)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: true,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: True,</span>
+<span class="sd">            b: False</span>
 <span class="sd">        }</span>
 
 <span class="sd">        With :class:`ivy.Container` input:</span>
@@ -2562,8 +2561,8 @@
 <span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_value_is_nan(x, include_infs=False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: False,</span>
+<span class="sd">            b: False</span>
 <span class="sd">        }</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">cont_multi_map_in_function</span><span class="p">(</span>
@@ -2621,24 +2620,24 @@
 <span class="sd">        &gt;&gt;&gt; y = x.value_is_nan()</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: true</span>
+<span class="sd">            a: False,</span>
+<span class="sd">            b: True</span>
 <span class="sd">        }</span>
 
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([float(&#39;inf&#39;)]), b=ivy.array([0]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.value_is_nan()</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: true,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: True,</span>
+<span class="sd">            b: False</span>
 <span class="sd">        }</span>
 
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([float(&#39;inf&#39;)]), b=ivy.array([22]))</span>
 <span class="sd">        &gt;&gt;&gt; y = x.value_is_nan(include_infs=False)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
-<span class="sd">            a: false,</span>
-<span class="sd">            b: false</span>
+<span class="sd">            a: False,</span>
+<span class="sd">            b: False</span>
 <span class="sd">        }</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_value_is_nan</span><span class="p">(</span>
@@ -4081,7 +4080,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Ivy Team.</p>
+    <p>&#169; Copyright 2020-2023, Ivy Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
